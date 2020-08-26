@@ -36,16 +36,22 @@ body {
 
 .navbar{
 color: white;
-font-family: "Fugaz One", cursive;
-font-size: larger;
+font-family: 'Faster One', cursive;
+font-size: 30px;
 top: 0;
 width: 100%;
 margin-bottom: 20px;
 /* position: absolute; */
 }
 
+.navbar-brand{
+  font-size: 50px;
+}
+
 h2{
   color: white;
+  font-family: 'Fugaz One', cursive;
+  font-size: 50px;
 }
 
 .nav-link{
