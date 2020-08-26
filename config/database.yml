@@ -13,8 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: elitevalet_development
   username: root
-  password: response
+  password: Slois123.
   host: localhost
 
 development:
@@ -49,6 +50,10 @@ test:
 #
 production:
   <<: *default
-  database: elitevalet_production
-  username: elitevalet
+  database: <%= ENV['ELITEVALET_DATABASE_NAME'] %>
+  username: <%= ENV['ELITEVALET_DATABASE_USERNAME'] %>
+  adapter: mysql2
+  encoding: utf8
   password: <%= ENV['ELITEVALET_DATABASE_PASSWORD'] %>
+  host: <%= ENV['ELITEVALET_DATABASE_HOSTNAME'] %>
+  port: <%= ENV['ELITEVALET_DATABASE_PORT'] %>
