@@ -55,4 +55,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Adding authentication with Devise
 gem 'devise'
-

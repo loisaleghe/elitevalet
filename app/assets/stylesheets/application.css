@@ -16,9 +16,42 @@
 
 
 body {
-  margin: 55px 0;
+  height:100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   padding: 0;
-  background-image: url("parkingcar.jpeg");
+  background-image: url("car.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.field{
+  color: white;
+  text-align: center;
+}
+
+.navbar{
+color: white;
+font-family: "Fugaz One", cursive;
+font-size: larger;
+top: 0;
+width: 100%;
+margin-bottom: 20px;
+/* position: absolute; */
+}
+
+h2{
+  color: white;
+}
+
+.nav-link{
+  color: black !important;
+}
+
+@media only screen and (max-width: 600px) {
+
 }
