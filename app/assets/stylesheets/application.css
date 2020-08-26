@@ -58,6 +58,10 @@ h2{
   color: black !important;
 }
 
+.link-to{
+  color:white !important;
+}
+
 @media only screen and (max-width: 600px) {
 
 }
