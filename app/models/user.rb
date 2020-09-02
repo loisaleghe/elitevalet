@@ -49,7 +49,7 @@ class User < ApplicationRecord
   has_many :vehicles
   delegate :role_name, to: :role
 
-  before_validation :set_user_role, on: :create 
+  before_validation :set_user_role, on: :create
   after_create :confirm_user
 
   def set_user_role
@@ -61,4 +61,9 @@ class User < ApplicationRecord
     self.confirmed_at = Date.today
     self.save!
   end
+
+  # Validation
+   validates :phone_number, allow_blank: true, numericality: { only_integer: true }, length: { is: 10 }
+   validates :postal_code, allow_blank: true, format: { with: /\A[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1}[ -]?\d{1}[A-Z]{1}\d{1}\z/,
+       message: "invalid format for postal code" }
 end
