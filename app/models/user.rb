@@ -1,6 +1,9 @@
 # == Schema Information
 #
 # Table name: users
+#
+#  id                     :bigint           not null, primary key
+#  city                   :string(255)
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string(255)
 #  confirmed_at           :datetime

@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+  <% if current_user.role.admin? %>
+    <div class="form-group row" style="text-align: center;">
+        <div class="col-3" style="color: white; font-family: Fugaz One;font-size: 20px;">CAR OWNER - <%= @vehicle.user.email %> </div>
+    </div>
+    <% end %>
+
   <div class="field">
     <%= form.label :licence_plate %>
     <%= form.text_field :licence_plate %>

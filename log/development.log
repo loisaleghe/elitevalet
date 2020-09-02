@@ -29503,3 +29503,371 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.8ms | Allocations: 13594)
 
 
+Started GET "/users/3/edit" for ::1 at 2020-09-01 21:31:30 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:21:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/edit.html.erb:51
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `vehicles` WHERE `vehicles`.`user_id` = 3[0m
+  ↳ app/views/users/edit.html.erb:51
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`user_id` = 3[0m
+  ↳ app/views/vehicles/_user_vehicles.html.erb:17
+  Rendered vehicles/_user_vehicles.html.erb (Duration: 1.9ms | Allocations: 1030)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 231)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 1.4ms | Allocations: 13613)
+
+
+Started GET "/users" for ::1 at 2020-09-01 21:32:50 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 233)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.9ms | Allocations: 10315)
+
+
+Started GET "/vehicles" for ::1 at 2020-09-01 21:32:52 -0400
+Processing by VehiclesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles`[0m
+  ↳ app/views/vehicles/index.html.erb:16
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/index.html.erb:28
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1753)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 240)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.8ms | Allocations: 10186)
+
+
+Started GET "/users/1" for ::1 at 2020-09-01 21:32:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:14:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:1
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 911)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:9
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 946)
+Completed 200 OK in 22ms (Views: 12.0ms | ActiveRecord: 1.2ms | Allocations: 10679)
+
+
+Started GET "/vehicles" for ::1 at 2020-09-01 21:33:08 -0400
+Processing by VehiclesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles`[0m
+  ↳ app/views/vehicles/index.html.erb:16
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/index.html.erb:28
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1746)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 232)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 1.1ms | Allocations: 10173)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:33:10 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  Rendered vehicles/_form.html.erb (Duration: 2.8ms | Allocations: 1728)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/layouts/_navigation.html.erb:9
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 1026)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 12056)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:37:50 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  Rendered vehicles/_form.html.erb (Duration: 3.9ms | Allocations: 2910)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3231)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms | Allocations: 6577)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    15:     <div class="form-group row">
+    16:         <div class="col-3">Car Owner</div>
+    17:         <div class="col-sm-9">
+    18:             <%= @user.email %>
+    19:         </div>
+    20:     </div>
+    21:     <% end %>
+  
+app/views/vehicles/_form.html.erb:18
+app/views/vehicles/_form.html.erb:1
+app/views/vehicles/edit.html.erb:3
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:52:08 -0400
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 10.2ms | Allocations: 3604)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 637)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 1.3ms | Allocations: 14732)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:52:48 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.0ms | Allocations: 3414)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3788)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 637)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 1.1ms | Allocations: 14494)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:53:20 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.9ms | Allocations: 3414)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 637)
+Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 1.1ms | Allocations: 14489)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:53:32 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.6ms | Allocations: 3414)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 637)
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 1.0ms | Allocations: 14487)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:53:51 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.6ms | Allocations: 3414)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 637)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 1.1ms | Allocations: 14475)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:54:56 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.4ms | Allocations: 3414)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 637)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 1.0ms | Allocations: 14485)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:56:24 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.9ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.5ms | Allocations: 3700)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 4021)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.6ms | Allocations: 7356)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00007fe25cce3f60>::OWNER):
+    19:         </div>
+    20:     </div>
+    21: 
+    22:     <%= form.label CAR OWNER %>
+    23: 
+    24:     <% end %>
+    25: 
+  
+app/views/vehicles/_form.html.erb:22
+app/views/vehicles/_form.html.erb:1
+app/views/vehicles/edit.html.erb:3
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:56:34 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.8ms | Allocations: 3617)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 637)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 1.1ms | Allocations: 14735)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:57:01 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 6.5ms | Allocations: 3761)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 7.5ms | Allocations: 4134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 637)
+Completed 200 OK in 24ms (Views: 19.6ms | ActiveRecord: 1.1ms | Allocations: 14842)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:57:18 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:18
+  Rendered vehicles/_form.html.erb (Duration: 5.9ms | Allocations: 3413)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3786)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 637)
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 1.2ms | Allocations: 14482)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:57:53 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:16
+  Rendered vehicles/_form.html.erb (Duration: 5.3ms | Allocations: 3430)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 637)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 1.0ms | Allocations: 14489)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:58:21 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:16
+  Rendered vehicles/_form.html.erb (Duration: 5.6ms | Allocations: 3429)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3806)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 637)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 1.1ms | Allocations: 14548)
+
+
+Started GET "/users/1/vehicles/1/edit" for ::1 at 2020-09-01 21:58:34 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.3ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:16
+  Rendered vehicles/_form.html.erb (Duration: 5.3ms | Allocations: 3408)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3781)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 637)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 1.1ms | Allocations: 14467)
+
+
