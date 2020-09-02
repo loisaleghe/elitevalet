@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: roles
+#
+#  id         :bigint           not null, primary key
+#  role_name  :integer          default("user")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  role_name: MyString
+
+two:
+  role_name: MyString

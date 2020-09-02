@@ -1,0 +1,25 @@
+<h2>Users</h2>
+<hr>
+
+<div class="table-responsive">
+            <table class="table">
+                <thead class="thead-transparent">
+                    <tr>
+                        <th scope="col" style="width: 5%; color: white; font-size: 20px">#</th>
+                        <th scope="col" style="width: 90%; font-family: Fugaz One; color: white; font-size: 20px">USER</th>
+                        <th scope="col" style="width: 15%"></th>
+                        <th scope="col" style="width: 20%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @users.each.with_index do |user, index| %>
+                    <tr>
+                        <th scope="row" style="color: white; font-size: 15px"><%= index + 1 %></th>
+                        <td style="font-family: Fugaz One; font-size: 15px"><%= link_to "#{user.email}", user_path(user) , style:"color:white;"%></td>
+                        <td><%= link_to "Edit", edit_user_path(user), class: "btn btn-secondary float-left" , style: "color:white"%></td>
+                        <td><%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Delete this user?"}, class: "btn btn-danger float-right" , style: "color:white" %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+</div>

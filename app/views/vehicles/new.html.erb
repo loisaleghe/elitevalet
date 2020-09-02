@@ -1,0 +1,42 @@
+<h3 style="color:white; font-family: Fugaz One">VEHICLE DETAILS </h3>
+<hr>
+
+<%= form_for [@user, @vehicle] do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+    <% if @vehicle && @vehicle.errors.any? %>
+        <% @vehicle.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+    <div class="form-group" style="color:white">
+        <%= f.label :licence_plate %>
+        <%= f.text_field :licence_plate, class: "form-control" %>
+    </div>
+
+    <div class="form-group" style="color:white">
+        <%= f.label :colour %>
+        <%= f.text_field :colour, class: "form-control" %>
+    </div>
+
+    <div class="form-group" style="color:white">
+        <%= f.label :make %>
+        <%= f.text_field :make, class: "form-control" %>
+    </div>
+
+    <div class="form-group" style="color:white">
+        <%= f.label :model %>
+        <%= f.text_field :model, class: "form-control" %>
+    </div>
+
+    <div class="form-group" style="color:white">
+        <%= f.label :year %>
+        <%= f.text_field :year, class: "form-control" %>
+    </div>
+
+
+
+    <div class="actions">
+        <%= f.submit "Add vehicle", class: "btn btn-primary float-right" %>
+    </div>
+
+<% end %>

@@ -1,0 +1,59 @@
+<h3 style="color:white">Edit user information</h3>
+<hr>
+
+<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+   <% if @user && @user.errors.any? %>
+       <% @user.errors.full_messages.each do |msg| %>
+           <div class="alert alert-danger"><%= msg %></div>
+       <% end %>
+   <% end %>
+   <div class="form-group" style="color:white">
+       <%= f.label :first_name %>
+           <%= f.text_field :first_name, class: "form-control" %>
+   </div>
+
+   <div class="form-group" style="color:white">
+       <%= f.label :last_name %>
+           <%= f.text_field :last_name, class: "form-control" %>
+   </div>
+
+   <div class="form-group" style="color:white">
+       <%= f.label :street_address %>
+           <%= f.text_field :street_address, class: "form-control" %>
+   </div>
+
+   <div class="form-group" style="color:white">
+       <%= f.label :city %>
+           <%= f.text_field :city, class: "form-control" %>
+   </div>
+
+   <div class="form-group" style="color:white">
+       <%= f.label :province %><br>
+       <%= f.select :province, ["Alberta","British Columbia","Manitoba", "New Brunswick", "Newfoundland and Labrador", "Nova Scotia", "Ontario", "prince Edward Island", "Quebec", "Saskatchewan"], {}, {class: "custom-select"} %>
+   </div>
+
+   <div class="form-group" style="color:white">
+       <%= f.label :postal_code %>
+       <%= f.text_field :postal_code, class: "form-control" %>
+   </div>
+
+   <div class="form-group" style="color:white">
+       <%= f.label :telephone_number %>
+       <%= f.text_field :phone_number, class: "form-control" %>
+   </div>
+
+   <%= f.submit "Save Changes", class: "btn btn-primary float-right" %>
+   <%= link_to "Back", :back, class: "btn btn-dark float-left", style:"color:white"%>
+
+<% end %>
+
+
+<% if current_user.role.admin? && @user.vehicles.count > 0 %>
+<br>
+<br>
+<hr>
+<%= render "vehicles/user_vehicles"%>
+<% end %>
+<br>
+<br>
+<hr>

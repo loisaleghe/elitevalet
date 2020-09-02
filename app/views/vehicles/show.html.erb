@@ -1,0 +1,48 @@
+    <h3 class="text-center" style="color: white; font-family: Fugaz One">VEHICLE INFORMATION</h3>
+
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <% if current_user.role.admin? %>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">Owner</th>
+                        <td style="width: 70%"><%= link_to "#{@vehicle.user.email}", user_path(@vehicle.user) %></td>
+                    </tr>
+                    <% end %>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">License plate</th>
+                        <td style="width: 70%"><%= @vehicle.licence_plate %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">Colour</th>
+                        <td style="width: 70%"><%= @vehicle.colour %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">Make</th>
+                        <td style="width: 70%"><%= @vehicle.make %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">Model</th>
+                        <td style="width: 70%"><%= @vehicle.model %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">Year</th>
+                        <td style="width: 70%"><%= @vehicle.year %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%; color: white">Status</th>
+                        <td style="width: 70%">
+                        <% if @vehicle.paid? %>
+                            PAID
+                        <% else %>
+                            UNPAID &emsp;<%= link_to image_tag("https://www.braintreepayments.com/images/features/paypal/paypal-button@2x.png" ,style: "height: 15px; width:40px;"),  checkout_vehicle_path(@vehicle), method: :patch
+     %>
+                        <% end %> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </div>
+<br>
+<hr>
+<%= link_to "Back", :back, class: "btn btn-dark float-left", style: "color: white" %>

@@ -1,0 +1,44 @@
+<h3 class="text-center" style="color: white;"><%= @user.role.role_name.capitalize %> Information</h3><br/>
+
+<div class="table-responsive">
+            <table class="table">
+                <tbody style="color:white">
+                    <tr>
+                        <th scope="row" style="width: 30%">Email</th>
+                        <td style="width: 70%"><%= @user.email %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">First name</th>
+                        <td style="width: 70%"><%= @user.first_name %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">Last name</th>
+                        <td style="width: 70%"><%= @user.last_name %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">Street address</th>
+                        <td style="width: 70%"><%= @user.street_address %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">City</th>
+                        <td style="width: 70%"><%= @user.city %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">Province</th>
+                        <td style="width: 70%"><%= @user.province %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">Postal code</th>
+                        <td style="width: 70%"><%= @user.postal_code %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%">Telephone number</th>
+                        <td style="width: 70%"><%= @user.phone_number %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" style="width: 30%"></th>
+                        <td style="width: 70%"><%= link_to "Edit user", edit_user_path(@user), class: "btn btn-secondary" , style: "color:white" %>&emsp;<%= link_to "Delete user", user_path(@user), method: :delete, data: {confirm: "Delete this user?"}, class: "btn btn-danger" , style: "color:white" %></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
