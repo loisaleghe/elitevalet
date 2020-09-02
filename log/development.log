@@ -29871,3 +29871,207 @@ Processing by VehiclesController#edit as HTML
 Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 1.1ms | Allocations: 14467)
 
 
+Started GET "/vehicles" for ::1 at 2020-09-01 21:59:56 -0400
+Processing by VehiclesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles`[0m
+  ↳ app/views/vehicles/index.html.erb:16
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/index.html.erb:28
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2032)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 240)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 1.5ms | Allocations: 10594)
+
+
+Started GET "/users" for ::1 at 2020-09-01 21:59:58 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 241)
+Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 0.9ms | Allocations: 11193)
+
+
+Started GET "/users/1" for ::1 at 2020-09-01 22:00:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:14:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:1
+  Rendered users/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:9
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 954)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 1.1ms | Allocations: 11053)
+
+
+Started GET "/users/1" for ::1 at 2020-09-01 22:20:51 -0400
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:14:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:1
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 911)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:9
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 946)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 1.3ms | Allocations: 10630)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-09-01 22:20:56 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1qfHpHLNErdlA3XDjOcyia2fIBxm3LTHsEEFPLScip49YlaV1hDu6VI8b7EgpWkFkxE1x02uILAHDgCK/7OyZA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 2290)
+
+
+Started GET "/" for ::1 at 2020-09-01 22:20:56 -0400
+Processing by PagesController#home as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-01 22:20:56 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 192)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 605)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 208)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 10405)
+
+
+Started GET "/users/password/new" for ::1 at 2020-09-01 22:21:01 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 245)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1059)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 208)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 8827)
+
+
+Started POST "/users/password" for ::1 at 2020-09-01 22:21:11 -0400
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"SH3W+nMu1dDSd3KfVQHpG7Ga8mpqajmOkSb/Ghusmx1eWlyt72Vy6+cfzpcn4h9cr0nvHuP6E29V+w4dmWESwQ==", "user"=>{"email"=>"loisaleghe@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'loisaleghe@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'e1d4991727deecb2bc39d4531e99c2fc6909be837c44505f9d2c97f70de0e9e7' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`reset_password_token` = 'e1d4991727deecb2bc39d4531e99c2fc6909be837c44505f9d2c97f70de0e9e7', `users`.`reset_password_sent_at` = '2020-09-02 02:21:11', `users`.`updated_at` = '2020-09-02 02:21:11.761127' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 1.3ms | Allocations: 234)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 7.4ms
+Delivered mail 5f4f0197c77a7_11a9e3a98967@MacBook-Pro.local.mail (9.5ms)
+Date: Tue, 01 Sep 2020 22:21:11 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: loisaleghe@gmail.com
+Message-ID: <5f4f0197c77a7_11a9e3a98967@MacBook-Pro.local.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello loisaleghe@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=WD9FDyYhNdUt3m1AFz_o">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 163ms (ActiveRecord: 3.7ms | Allocations: 24619)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-01 22:21:11 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 211)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 207)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 8202)
+
+
+Started GET "/users/password/new" for ::1 at 2020-09-01 22:21:49 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 207)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 780)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 208)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 7848)
+
+
+Started POST "/users/password" for ::1 at 2020-09-01 22:21:59 -0400
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"OGkuvvmpUPOgOzk6+z4Ik2vtcZduXlD+dbwJbrIBUb6P3z16FQC+d+7kl6/d3NZRzK0qLAVXwU5kk7NiOtK7uA==", "user"=>{"email"=>"loisaleghe@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'loisaleghe@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`reset_password_token` = '2c8d735666f703b527c88b8bfb5c326d6377bebcfb1075e4ba3d72b5bff0c8d7' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`reset_password_token` = '2c8d735666f703b527c88b8bfb5c326d6377bebcfb1075e4ba3d72b5bff0c8d7', `users`.`reset_password_sent_at` = '2020-09-02 02:21:59', `users`.`updated_at` = '2020-09-02 02:21:59.743068' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 0.2ms | Allocations: 78)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 1.6ms
+Delivered mail 5f4f01c7b7828_11a9ef1181097@MacBook-Pro.local.mail (2.0ms)
+Date: Tue, 01 Sep 2020 22:21:59 -0400
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: loisaleghe@gmail.com
+Message-ID: <5f4f01c7b7828_11a9ef1181097@MacBook-Pro.local.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello loisaleghe@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=2QDRfxqnoiNedgGLM65x">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 20ms (ActiveRecord: 2.7ms | Allocations: 11395)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-01 22:21:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 206)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 203)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 8223)
+
+
