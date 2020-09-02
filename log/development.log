@@ -33722,3 +33722,129 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 1.3ms | Allocations: 10924)
 
 
+Started GET "/users/4" for ::1 at 2020-09-02 11:39:12 -0400
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:14:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:1
+  Rendered users/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:9
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 1348)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.1ms | Allocations: 12896)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-09-02 11:39:17 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n4nRRMPuMnJ0d1DI8MLXw6RiIBjxIgWnu9dzjE+xVlmMHdpQfVZKSoNRuup05ZJCEHaxL9iaII3qt3uYK1VNJQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 2513)
+
+
+Started GET "/" for ::1 at 2020-09-02 11:39:17 -0400
+Processing by PagesController#home as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-02 11:39:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 195)
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 617)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 2151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 208)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 10725)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-09-02 11:39:34 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"XxNC2jadng6wE5RvfHYy3hbZnraOa0bXucIHwJxW9dkHBTJOg3TjlOQfNXZdqpwc+NObsVabcir3sUXAXo0iDw==", "user"=>{"email"=>"loisaleghe@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in!"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'loisaleghe@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 217ms (ActiveRecord: 0.3ms | Allocations: 3773)
+
+
+Started GET "/" for ::1 at 2020-09-02 11:40:32 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:3:in `home'
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+Redirected to http://localhost:3000/vehicles
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1920)
+
+
+Started GET "/vehicles" for ::1 at 2020-09-02 11:40:32 -0400
+Processing by VehiclesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering vehicles/index.html.erb within layouts/application
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles`[0m
+  ↳ app/views/vehicles/index.html.erb:16
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/index.html.erb:28
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 7749)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 240)
+Completed 200 OK in 43ms (Views: 33.6ms | ActiveRecord: 3.7ms | Allocations: 18050)
+
+
+Started GET "/users/3/vehicles/1/edit" for ::1 at 2020-09-02 11:40:37 -0400
+Processing by VehiclesController#edit as HTML
+  Parameters: {"user_id"=>"3", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.4ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/edit.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/vehicles/_form.html.erb:16
+  Rendered vehicles/_form.html.erb (Duration: 7.2ms | Allocations: 4338)
+  Rendered vehicles/edit.html.erb within layouts/application (Duration: 8.6ms | Allocations: 4716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 239)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 1.6ms | Allocations: 14158)
+
+
+Started PATCH "/vehicles/1" for ::1 at 2020-09-02 11:40:40 -0400
+Processing by VehiclesController#update as HTML
+  Parameters: {"authenticity_token"=>"PoWa5XBT9AniuFhT24Cozdhu9hyrdGoUebQrWN0c3g7XM4CxnsMqMYAhoHfOsRkSYjO8hWxyYdSD9zWsM7teTQ==", "vehicle"=>{"licence_plate"=>"K12Canada", "colour"=>"White", "make"=>"Toyota", "model"=>"2", "year"=>"2019"}, "commit"=>"Update Vehicle", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.2ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vehicles_controller.rb:44:in `block in update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:44:in `block in update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vehicles_controller.rb:44:in `block in update'
+Redirected to http://localhost:3000/vehicles/1
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms | Allocations: 5699)
+
+
+Started GET "/vehicles/1" for ::1 at 2020-09-02 11:40:40 -0400
+Processing by VehiclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mVehicle Load (0.1ms)[0m  [1m[34mSELECT `vehicles`.* FROM `vehicles` WHERE `vehicles`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/vehicles_controller.rb:80:in `set_vehicle'
+  Rendering vehicles/show.html.erb within layouts/application
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/vehicles/show.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/vehicles/show.html.erb:9
+  Rendered vehicles/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2065)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 240)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 11504)
+
+

@@ -6,7 +6,7 @@
                     <% if current_user.role.admin? %>
                     <tr>
                         <th scope="row" style="width: 30%; color: white">Owner</th>
-                        <td style="width: 70%"><%= link_to "#{@vehicle.user.email}", user_path(@vehicle.user) %></td>
+                        <td style="width: 70%; color: white"><%= link_to "#{@vehicle.user.email}", user_path(@vehicle.user) %></td>
                     </tr>
                     <% end %>
                     <tr>
