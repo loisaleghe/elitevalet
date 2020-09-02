@@ -1,0 +1,190 @@
+/* line 1, app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+}
+
+/* line 6, app/assets/stylesheets/scaffolds.scss */
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 11, app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 16, app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+
+/* line 19, app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+
+/* line 22, app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 26, app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 29, app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 32, app/assets/stylesheets/scaffolds.scss */
+div.field,
+div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 36, app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 39, app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 44, app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+/* line 51, app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+/* line 60, app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 64, app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+body {
+  height:120vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-image: url(/assets/car-41f89b1aaa0efa2daf5a3b5f0e89bcc9bc1f8250743946c39e618ed4aa790413.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.field{
+  color: white;
+  text-align: center;
+}
+
+.navbar{
+color: white;
+font-family: 'Faster One', cursive;
+font-size: 30px;
+top: 0;
+width: 100%;
+margin-bottom: 20px;
+/* position: absolute; */
+}
+
+.navbar .nav-link {
+  font-family: 'Faster One', cursive;
+  font-size: 30px;
+}
+
+.nav-link:active,.nav-link:hover, .navbar-brand:active, .navbar-brand:hover{
+  text-decoration: none;
+  background: none;
+}
+
+.navbar-brand{
+  font-size: 50px;
+}
+
+td{
+  color: white;
+}
+
+td a{
+  color: white;
+}
+
+h2{
+  color: white;
+  font-family: 'Fugaz One', cursive;
+  font-size: 50px;
+}
+
+h6{
+  color: white;
+  font-family: 'Fugaz One', cursive;
+  text-align: center;
+}
+
+.forgot_style{
+  font-family: 'Fugaz One', cursive;
+  color: white;
+}
+.nav-link{
+  color: black !important;
+}
+
+.link-to{
+  color:white !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+}
