@@ -49,11 +49,16 @@ class User < ApplicationRecord
   has_many :vehicles
   delegate :role_name, to: :role
 
-  after_create :set_user_role
+  before_validation :set_user_role, on: :create 
+  after_create :confirm_user
 
   def set_user_role
     user_role = Role.where(role_name: :user).first
     self.role = user_role
   end
 
+  def confirm_user
+    self.confirmed_at = Date.today
+    self.save!
+  end
 end
